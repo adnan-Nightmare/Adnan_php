@@ -12,10 +12,12 @@
             $_SESSION['isLogin'] = true;
             $_SESSION['username'] = $username;
             $_SESSION['notip'] = true;
-            echo "<script> alert('berhasil login')
-                  location.href = 'index.php'</script";
-            // header("location: index.php");
-            // exit;
+
+            // echo "<script> alert('berhasil login')
+            //       location.href = 'index.php'</script";
+
+            header("location: index.php");
+            exit;
         }else{
             $_SESSION['old'] = $username;
             if($usernamePost != $username and $pwPost == $pw){
@@ -26,10 +28,10 @@
                 $_SESSION['err'] = "Username dan password tidak sesuai";
             }
 
-            echo "<script>alert('login gagal')
-                   location.href = 'login.php'</script>";
+            // echo "<script>alert('login gagal')
+            //        location.href = 'login.php'</script>";
 
-            // header("location: login.php");
+            header("location: login.php");
             exit;
         }
     }
